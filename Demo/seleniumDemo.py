@@ -25,7 +25,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-pause_time = 2
+pause_time = 1.5
 
 driver=webdriver.Chrome("/Users/joshbenphilip/Drivers/chromedriver")
 
@@ -33,10 +33,10 @@ driver=webdriver.Chrome("/Users/joshbenphilip/Drivers/chromedriver")
 driver.get("https://www.saucedemo.com/")
 
 driver.maximize_window() # For maximizing window
-driver.implicitly_wait(1.5) # gives an implicit wait for 20 seconds
-
+time.sleep(pause_time)
 driver.find_element(By.ID,"user-name").send_keys("standard_user")
 driver.find_element(By.ID,"password").send_keys("secret_sauce")
+time.sleep(pause_time)
 driver.find_element(By.ID, "login-button").click()
 time.sleep(pause_time)
 driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
